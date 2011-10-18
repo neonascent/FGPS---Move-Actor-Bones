@@ -1,0 +1,3 @@
+
+Avoid no missing MSVCP100.dll error, C++ -> Code Generation -> Runtime /MT not DLL
+http://stackoverflow.com/questions/3162325/after-building-exe-using-vs-2010-c-missing-msvcp100-dll

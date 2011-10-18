@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="PluginMain.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="Nodes\FlowMoveBones.cpp">
+      <Filter>Nodes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\PluginCommon.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Nodes">
+      <UniqueIdentifier>{97c9f580-6f07-4a19-8cf7-a0971923b0e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
