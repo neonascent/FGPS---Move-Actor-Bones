@@ -107,8 +107,8 @@
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseBuild|x64'">true</LinkIncremental>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Udp</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Udp</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Udp</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Udp</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MoveBones</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MoveBones</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='ReleaseBuild|Win32'">Udp</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='ReleaseBuild|x64'">Udp</TargetName>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Archive\Experimentation\Tracking\Crysis 2\Code\FGPlugin\;D:\Crysis Wars\Code\CryEngine\CryAction\;D:\Crysis Wars\Code\CryEngine\CryCommon\;$(IncludePath)</IncludePath>
@@ -210,7 +210,7 @@ copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin32\Udp.dll" "$(M
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <OutputFile>$(OutDir)Udp.dll</OutputFile>
+      <OutputFile>$(OutDir)MoveBones.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)../FGPlugins/Bin32/Xml.pdb</ProgramDatabaseFile>
@@ -222,8 +222,8 @@ copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin32\Udp.dll" "$(M
       <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin32\Udp.dll" "D:\Crysis Wars\Mods\FGPS\FGPlugins\Bin32\"
-copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin32\Udp.dll" "$(MSBuildProjectDirectory)\binaries\bin32\"
+      <Command>copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin32\MoveBones.dll" "D:\Crysis Wars\Mods\FGPS\FGPlugins\Bin32\MoveBones.dll"
+copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin32\MoveBones.dll" "F:\Archive\Experimentation\Tracking\Crysis 2\Code\MoveBones\binaries\Bin32"
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -247,7 +247,7 @@ copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin32\Udp.dll" "$(M
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <OutputFile>$(OutDir)Udp.dll</OutputFile>
+      <OutputFile>$(OutDir)MoveBones.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)../FGPlugins/Bin32/Xml.pdb</ProgramDatabaseFile>
@@ -255,11 +255,12 @@ copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin32\Udp.dll" "$(M
       <LargeAddressAware>true</LargeAddressAware>
       <ImportLibrary>$(OutDir)../FGPlugins/Bin32/Xml.lib</ImportLibrary>
       <AdditionalLibraryDirectories>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v7.0A\Lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ws2_32.lib;FGPS.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin64\Udp.dll" "D:\Crysis Wars\Mods\FGPS\FGPlugins\Bin64\"
-copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin64\Udp.dll" "$(MSBuildProjectDirectory)\binaries\bin64\"
+      <Command>copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin64\MoveBones.dll" "D:\Crysis Wars\Mods\FGPS\FGPlugins\Bin64\MoveBones.dll"
+copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin64\MoveBones.dll" "F:\Archive\Experimentation\Tracking\Crysis 2\Code\MoveBones\binaries\Bin64"
+
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>

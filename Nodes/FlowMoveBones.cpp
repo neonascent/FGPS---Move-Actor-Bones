@@ -135,31 +135,20 @@ public:
 		IActorSystem *pActSys = g_pGame->GetIGameFramework()->GetIActorSystem();
 		if (pActSys)
 		{
-			CActor *pActor = static_cast<CActor *> (pActSys->GetActor(pTarget->GetId()));
+			//CActor *pActor = static_cast<CActor *> (pActSys->GetActor(pTarget->GetId()));
+			IActor *pActor = (pActSys->GetActor(pTarget->GetId()));
 			if (pActor)
 			{
-				// no way to know if this works...
-				
-
-				/*
-				based on HUD.cpp:
-				CActor *pTempActor = static_cast<CActor *>(pActorSystem->GetActor(*it));
-								if(pTempActor && pTempActor != pActor)
-								{
-									if((pTempActor->GetHealth()<=0) && (pGameRules->GetPlayerSpawnGroup(pTempActor)==spawnID))
-										players.push_back(pTempActor->GetEntity()->GetName());
-								}
-								*/
-				
+				/*		
 				int limbID = pActor->GetIKLimbIndex(bone);
-				if (limbID > -1) {
+				if (limbID > -1) {*/
 					pActor->SetIKPos(bone, pos, 1);
 					ActivateOutput(&m_actInfo, EOP_Success, true); 
 					return;
-				} else {
+				/*} else {
 					// not a valid bone
 					ActivateOutput(&m_actInfo, EOP_Error, (string) "Not a valid bone" );
-				}
+				}*/
 				
 			} else {
 				// not an actor
