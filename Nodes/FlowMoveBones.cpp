@@ -18,7 +18,7 @@
 #include "Actor.h"
 
 ////////////////////////////////////////////////////
-class CFlowMoveBones : public CFlowBaseNode
+class CFlowMoveLimbs : public CFlowBaseNode
 {
 
 	enum EInputPorts
@@ -45,7 +45,7 @@ class CFlowMoveBones : public CFlowBaseNode
 
 public:
 	////////////////////////////////////////////////////
-	CFlowMoveBones(SActivationInfo *pActInfo)
+	CFlowMoveLimbs(SActivationInfo *pActInfo)
 	{
 		m_pTarget = NULL;
 		boneName = "";
@@ -54,7 +54,7 @@ public:
 
 	
 	////////////////////////////////////////////////////
-	virtual ~CFlowMoveBones(void)
+	virtual ~CFlowMoveLimbs(void)
 	{
 
 	}
@@ -129,19 +129,26 @@ public:
 	}
 
 
-	void MoveBone (IEntity *pTarget, string bone, Vec3& pos) {
+	void MoveBone (IEntity *pTarget, const char *bone, Vec3& pos) {
 
 		// Target must be an actor
 		IActorSystem *pActSys = g_pGame->GetIGameFramework()->GetIActorSystem();
 		if (pActSys)
 		{
-			//CActor *pActor = static_cast<CActor *> (pActSys->GetActor(pTarget->GetId()));
-			IActor *pActor = (pActSys->GetActor(pTarget->GetId()));
+			// need to compile against FGPS.dll, and had a problem building FGPS.dll that was solved by http://www.crydev.net/viewtopic.php?p=659601#p659601
+			
+			CActor *pActor = static_cast<CActor *> (pActSys->GetActor(pTarget->GetId()));
+			//IActor *pActor = (pActSys->GetActor(pTarget->GetId()));
 			if (pActor)
 			{
-				/*		
-				int limbID = pActor->GetIKLimbIndex(bone);
-				if (limbID > -1) {*/
+				
+					
+				
+				//SIKLimb *s = pActor->GetIKLimb(1);
+				// only players and stuff?  virtual?
+				//int GetIKLimbIndex(const char *limbName);
+				//int limbID = pActor->GetIKLimbIndex(bone);
+				/*if (limbID > -1) {*/
 					pActor->SetIKPos(bone, pos, 1);
 					ActivateOutput(&m_actInfo, EOP_Success, true); 
 					return;
@@ -164,7 +171,7 @@ public:
 	////////////////////////////////////////////////////
 	virtual IFlowNodePtr Clone(SActivationInfo *pActInfo)
 	{
-		return new CFlowMoveBones(pActInfo);
+		return new CFlowMoveLimbs(pActInfo);
 	}
 
 	////////////////////////////////////////////////////
@@ -180,4 +187,4 @@ public:
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 
-REGISTER_FLOW_NODE("Actor:MoveBones", CFlowMoveBones);
+REGISTER_FLOW_NODE("Actor:MoveLimbs", CFlowMoveLimbs);
