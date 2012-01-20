@@ -114,6 +114,7 @@
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Archive\Experimentation\Tracking\Crysis 2\Code\FGPlugin\;D:\Crysis Wars\Code\CryEngine\CryAction\;D:\Crysis Wars\Code\CryEngine\CryCommon\;$(IncludePath)</IncludePath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Crysis Wars\Mods\FGPS\Bin64;$(LibraryPath)</LibraryPath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Crysis Wars\Mods\FGPS\Bin32;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Crysis Wars\Code\CryEngine\CryCommon;D:\Crysis Wars\Code\CryEngine\CryAction;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -343,7 +344,7 @@ copy "F:\Archive\Experimentation\Tracking\Crysis 2\FGPlugins\Bin32\Udp.dll" "$(M
     <ClInclude Include="StdAfx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Nodes\FlowMoveBones.cpp" />
+    <ClCompile Include="Nodes\FlowRotateJoints.cpp" />
     <ClCompile Include="PluginMain.cpp" />
     <ClCompile Include="StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

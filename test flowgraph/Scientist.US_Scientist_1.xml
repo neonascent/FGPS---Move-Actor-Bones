@@ -1,0 +1,25 @@
+<Graph Description="" Group="Scientist" enabled="1" MultiPlayer="ClientServer">
+ <Nodes>
+  <Node Id="2" Class="Start" pos="-450,-450,0" flags="0">
+   <Inputs InGame="1" InEditor="1"/>
+  </Node>
+  <Node Id="3" Class="HUD:ShowHUDMessage" pos="190,-520,0" flags="0">
+   <Inputs text_Message="done" Pos="1" clr_Color="1,1,1" Time="3"/>
+  </Node>
+  <Node Id="4" Class="UDP:Sender" pos="-30,-540,0" flags="0">
+   <Inputs Enabled="1" Address="127.0.0.1" Port="6000" Message="test"/>
+  </Node>
+  <Node Id="5" Class="Time:Timer" pos="-410,-570,0" flags="0">
+   <Inputs period="1000" min="0" max="0" paused="0"/>
+  </Node>
+  <Node Id="8" Class="Entity:GetPos" pos="-240,-670,0" flags="0" EntityGUID="{A948D203-3DF3-4042-AEC2-C6C4EF6FEE23}" EntityGUID_64="40423DF3A948D203">
+   <Inputs entityId="0"/>
+  </Node>
+ </Nodes>
+ <Edges>
+  <Edge nodeIn="3" nodeOut="4" portIn="Trigger" portOut="Success" enabled="1"/>
+  <Edge nodeIn="4" nodeOut="5" portIn="Send" portOut="out" enabled="1"/>
+  <Edge nodeIn="8" nodeOut="5" portIn="Get" portOut="out" enabled="1"/>
+  <Edge nodeIn="4" nodeOut="8" portIn="Message" portOut="Pos" enabled="1"/>
+ </Edges>
+</Graph>

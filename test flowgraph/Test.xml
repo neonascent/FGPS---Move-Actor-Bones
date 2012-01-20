@@ -1,15 +1,12 @@
 <Graph Description="" Group="" enabled="1" MultiPlayer="ClientServer">
  <Nodes>
-  <Node Id="1" Class="ACtor::MoveBones" pos="280,60,0" flags="0">
-   <Inputs Target="0" JointName="leftArm" Pos="918,1475,29"/>
-  </Node>
-  <Node Id="2" Class="Entity:EntityId" pos="-310,-170,0" flags="0" EntityGUID="{A948D203-3DF3-4042-AEC2-C6C4EF6FEE23}" EntityGUID_64="40423DF3A948D203">
+  <Node Id="2" Class="Entity:EntityId" pos="-310,-170,0" flags="1" EntityGUID="{9235EAA4-9A45-484E-919B-4AD579B625BA}" EntityGUID_64="484E9A459235EAA4">
    <Inputs entityId="0"/>
   </Node>
-  <Node Id="5" Class="Entity:EntityPos" pos="-80,-170,0" flags="1">
+  <Node Id="5" Class="Entity:EntityPos" pos="-80,-170,0" flags="0">
    <Inputs entityId="0" pos="0,0,0" rotate="0,0,0" scale="0,0,0"/>
   </Node>
-  <Node Id="7" Class="Time:Timer" pos="-70,0,0" flags="0">
+  <Node Id="7" Class="Time:Timer" pos="-80,10,0" flags="0">
    <Inputs period="2" min="-1" max="1" paused="0"/>
   </Node>
   <Node Id="9" Class="Time:Timer" pos="-70,90,0" flags="0">
@@ -18,27 +15,61 @@
   <Node Id="10" Class="Time:Timer" pos="-70,170,0" flags="0">
    <Inputs period="8" min="0" max="2" paused="0"/>
   </Node>
-  <Node Id="11" Class="Vec3:AddVec3" pos="170,80,0" flags="0">
+  <Node Id="11" Class="Vec3:AddVec3" pos="210,-20,0" flags="0">
    <Inputs A="0,0,0" B="0,0,0"/>
   </Node>
   <Node Id="12" Class="Vec3:ToVec3" pos="60,60,0" flags="0">
    <Inputs x="0" y="0" z="0"/>
   </Node>
-  <Node Id="13" Class="HUD:ShowHUDMessage" pos="180,-60,0" flags="0">
+  <Node Id="15" Class="Time:Timer" pos="-70,280,0" flags="0">
+   <Inputs period="8" min="-1" max="1" paused="0"/>
+  </Node>
+  <Node Id="16" Class="Time:Timer" pos="-70,370,0" flags="0">
+   <Inputs period="4" min="-1" max="1" paused="0"/>
+  </Node>
+  <Node Id="17" Class="Time:Timer" pos="-70,450,0" flags="0">
+   <Inputs period="2" min="0" max="2" paused="0"/>
+  </Node>
+  <Node Id="18" Class="Vec3:ToVec3" pos="60,340,0" flags="0">
+   <Inputs x="0" y="0" z="0"/>
+  </Node>
+  <Node Id="19" Class="Vec3:AddVec3" pos="170,320,0" flags="0">
+   <Inputs A="0,0,0" B="0,0,0"/>
+  </Node>
+  <Node Id="21" Class="HUD:ShowHUDMessage" pos="630,70,0" flags="0">
    <Inputs text_Message="" Pos="1" clr_Color="1,1,1" Time="3"/>
+  </Node>
+  <Node Id="23" Class="HUD:ShowHUDMessage" pos="724,-108,0" flags="0">
+   <Inputs text_Message="success" Pos="1" clr_Color="1,1,1" Time="3"/>
+  </Node>
+  <Node Id="28" Class="Vec3:ScaleVec3" pos="170,240,0" flags="0">
+   <Inputs vector="0,0,0" scale="0.3"/>
+  </Node>
+  <Node Id="29" Class="Actor:MoveLimbs" pos="370,50,0" flags="0">
+   <Inputs Target="0" JointName="leftLeg" Pos="0,0,0"/>
+  </Node>
+  <Node Id="30" Class="Actor:MoveLimbs" pos="378,-90,0" flags="0">
+   <Inputs Target="0" JointName="rightArm" Pos="0,0,0"/>
   </Node>
  </Nodes>
  <Edges>
-  <Edge nodeIn="1" nodeOut="2" portIn="Target" portOut="Id" enabled="1"/>
   <Edge nodeIn="5" nodeOut="2" portIn="entityId" portOut="Id" enabled="1"/>
-  <Edge nodeIn="11" nodeOut="5" portIn="A" portOut="pos" enabled="1"/>
+  <Edge nodeIn="29" nodeOut="2" portIn="Target" portOut="Id" enabled="1"/>
+  <Edge nodeIn="30" nodeOut="2" portIn="Target" portOut="Id" enabled="1"/>
+  <Edge nodeIn="11" nodeOut="5" portIn="B" portOut="pos" enabled="1"/>
+  <Edge nodeIn="19" nodeOut="5" portIn="A" portOut="pos" enabled="1"/>
   <Edge nodeIn="12" nodeOut="7" portIn="x" portOut="out" enabled="1"/>
   <Edge nodeIn="12" nodeOut="9" portIn="y" portOut="out" enabled="1"/>
   <Edge nodeIn="12" nodeOut="10" portIn="z" portOut="out" enabled="1"/>
-  <Edge nodeIn="1" nodeOut="11" portIn="Move" portOut="out" enabled="1"/>
-  <Edge nodeIn="1" nodeOut="11" portIn="Pos" portOut="out" enabled="1"/>
-  <Edge nodeIn="11" nodeOut="12" portIn="B" portOut="vec3" enabled="1"/>
-  <Edge nodeIn="13" nodeOut="12" portIn="Trigger" portOut="vec3" enabled="1"/>
-  <Edge nodeIn="13" nodeOut="12" portIn="text_Message" portOut="vec3" enabled="1"/>
+  <Edge nodeIn="29" nodeOut="11" portIn="Move" portOut="out" enabled="1"/>
+  <Edge nodeIn="29" nodeOut="11" portIn="Pos" portOut="out" enabled="1"/>
+  <Edge nodeIn="30" nodeOut="11" portIn="Move" portOut="out" enabled="1"/>
+  <Edge nodeIn="30" nodeOut="11" portIn="Pos" portOut="out" enabled="1"/>
+  <Edge nodeIn="11" nodeOut="12" portIn="A" portOut="vec3" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="15" portIn="x" portOut="out" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="16" portIn="y" portOut="out" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="17" portIn="z" portOut="out" enabled="1"/>
+  <Edge nodeIn="28" nodeOut="18" portIn="vector" portOut="vec3" enabled="1"/>
+  <Edge nodeIn="19" nodeOut="28" portIn="B" portOut="out" enabled="1"/>
  </Edges>
 </Graph>

@@ -3,7 +3,7 @@
   <ItemGroup>
     <ClCompile Include="PluginMain.cpp" />
     <ClCompile Include="StdAfx.cpp" />
-    <ClCompile Include="Nodes\FlowMoveBones.cpp">
+    <ClCompile Include="Nodes\FlowRotateJoints.cpp">
       <Filter>Nodes</Filter>
     </ClCompile>
   </ItemGroup>
