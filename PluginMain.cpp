@@ -17,9 +17,8 @@
 #include <windows.h>
 #include "Nodes/G2FlowBaseNode.h"
 
-
 // Plugin's name
-#define PLUGIN_NAME "Move Bones"
+#define PLUGIN_NAME "Actor tools"
 
 // PLugin's author
 #define PLUGIN_AUTHOR "Josh Harle"
